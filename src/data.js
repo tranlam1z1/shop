@@ -69,7 +69,7 @@ export const products = [
 
 export const toppings = [
   {
-    id: 1,
+    id: 6,
     title: "Thêm trứng",
     price: 5000,
     description:
@@ -82,7 +82,7 @@ export const toppings = [
     },
   },
   {
-    id: 2,
+    id: 7,
     title: "Thêm mì Indomie",
     price: 7000,
     description:
@@ -95,7 +95,7 @@ export const toppings = [
     },
   },
   {
-    id: 3,
+    id: 8,
     title: "Thêm mì tương đen",
     price: 15000,
     description:
@@ -108,7 +108,7 @@ export const toppings = [
     },
   },
   {
-    id: 4,
+    id: 9,
     title: "Thêm topping",
     price: 5000,
     description:

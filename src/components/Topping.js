@@ -24,10 +24,10 @@ const Topping = ({ item }) => {
     });
   };
 
-  const formattedPrice = item.price.toLocaleString('vi-VN', {
-    style: 'currency',
-    currency: 'VND',
-    minimumFractionDigits: 0
+  const formattedPrice = item.price.toLocaleString("vi-VN", {
+    style: "currency",
+    currency: "VND",
+    minimumFractionDigits: 0,
   });
 
   return (
