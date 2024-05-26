@@ -28,14 +28,26 @@ const CartItem = ({ item }) => {
     }
   };
 
+  const formattedPrice = item.price.toLocaleString('vi-VN', {
+    style: 'currency',
+    currency: 'VND',
+    minimumFractionDigits: 0
+  });
+
+  const formattedTotalPrice = (item.price * item.quantity).toLocaleString('vi-VN', {
+    style: 'currency',
+    currency: 'VND',
+    minimumFractionDigits: 0
+  });
+
   return (
     <div className="flex items-center p-5 justify-between bg-green-200 mt-2 mb-2 rounded-xl">
       <div className="flex p-3">
-        <img src={item.image} className="h-28 rounded-lg" alt="" />
+        <img src={item.image} className="h-28 rounded-lg" alt={item.title} />
         <div className="ml-10 self-start space-y-5">
           <h1 className="text-xl text-green-700 font-semibold">{item.title}</h1>
-          <p>Giá: {item.price} VNĐ</p>
-          <p>Tổng tiền: {(item.price * item.quantity)} VNĐ</p>
+          <p>Giá: {formattedPrice}</p>
+          <p>Tổng tiền: {formattedTotalPrice}</p>
           <div className="flex items-center">
             <button onClick={decreaseItemQuantity} className="bg-gray-300 hover:bg-gray-400 rounded-full px-2 py-1">
               -

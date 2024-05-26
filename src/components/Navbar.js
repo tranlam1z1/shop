@@ -8,14 +8,22 @@ const Navbar = () => {
   return (
     <>
       <nav className="flex items-center justify-between h-20  max-w-6xl mx-auto">
-      <Link to={"/"}>
-  <div className="ml-5 flex items-center"> {/* Đảm bảo flex container để căn chỉnh hình ảnh và văn bản */}
-    <img  src={require("../photos/logo.jpg")} alt="Bếp Sinh Viên Logo" className="h-10 w-10" style={{ borderRadius: "50px" }} /> {/* Thay đổi kích thước theo yêu cầu */}
-    <h1 className="bg-gradient-to-br from-green-700 to-green-300 bg-clip-text text-transparent text-xl sm:text-2xl md:text-3xl font-bold logo cursor-pointer tracking-wider ml-2">
-      Bep Sinh Vien
-    </h1>
-  </div>
-</Link>
+        <Link to={"/"}>
+          <div className="ml-5 flex items-center">
+            {" "}
+            {/* Đảm bảo flex container để căn chỉnh hình ảnh và văn bản */}
+            <img
+              src={require("../photos/logo.jpg")}
+              alt="Bếp Sinh Viên Logo"
+              className="h-10 w-10"
+              style={{ borderRadius: "50px" }}
+            />{" "}
+            {/* Thay đổi kích thước theo yêu cầu */}
+            <h1 className="bg-gradient-to-br from-green-700 to-green-300 bg-clip-text text-transparent text-xl sm:text-2xl md:text-3xl font-bold logo cursor-pointer tracking-wider ml-2">
+              Bếp Sinh Viên
+            </h1>
+          </div>
+        </Link>
 
         <div className="flex list-none items-center space-x-6 mr-5 text-gray-700 -tracking-tighterr font-semibold">
           <Link to={"/"}>

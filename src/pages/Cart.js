@@ -33,6 +33,12 @@ const Cart = () => {
     }, 1000);
   };
 
+  const formattedTotalAmount = totalAmount.toLocaleString('vi-VN', {
+    style: 'currency',
+    currency: 'VND',
+    minimumFractionDigits: 0
+  });
+
   return (
     <>
       {cart.length > 0 ? (
@@ -51,7 +57,7 @@ const Cart = () => {
                   {cart.reduce((acc, item) => acc + item.quantity, 0)}
                 </p>
                 <p>
-                  <span className="text-gray-700 font-semibold">Thành tiền</span> : {totalAmount} VNĐ
+                  <span className="text-gray-700 font-semibold">Thành tiền</span> : {formattedTotalAmount}
                 </p>
                 <button
                   onClick={openPopup}
@@ -71,9 +77,10 @@ const Cart = () => {
                       <form className="mt-5" onSubmit={handleSubmit}>
                         <div className="mb-4">
                           <label className="block text-gray-700 font-semibold mb-2" htmlFor="cardNumber">
-                            Lưu ý: Nhập đúng nội dung chuyển khoản: Số lượng + Sản phẩm + Địa chỉ + Số điện thoại
+                            Lưu ý: Nhập đúng nội dung chuyển khoản: Số lượng + Tên sản phẩm + Địa chỉ + Số điện thoại
                           </label>
                           <p>Ví dụ: 2 trachanh tuancuong 0123456789 </p>
+                          <p className="text-red-700">Nhớ Chụp Bill Nhé !!!</p>
                         </div>
                         <div className="flex justify-between">
                           <button
@@ -97,10 +104,10 @@ const Cart = () => {
             </div>
           </div>
           {showSuccess && (
-  <div className="fixed top-4 right-4 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg text-xl font-semibold transition-opacity duration-300">
-    Thanh toán thành công!
-  </div>
-)}
+            <div className="fixed top-4 right-4 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg text-xl font-semibold transition-opacity duration-300">
+              Thanh toán thành công!
+            </div>
+          )}
         </>
       ) : (
         <>
