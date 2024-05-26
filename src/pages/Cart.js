@@ -45,7 +45,7 @@ const Cart = () => {
             </div>
             <div>
               <div className="flex flex-col justify-center items-end p-5 space-y-5 mt-14">
-                <h1 className="font-semibold text-lg text-purple-800">CHI TIẾT ĐƠN HÀNG</h1>
+                <h1 className="font-semibold text-lg text-green-700">CHI TIẾT ĐƠN HÀNG</h1>
                 <p>
                   <span className="text-gray-700 font-semibold">Tổng số lượng</span> :{" "}
                   {cart.reduce((acc, item) => acc + item.quantity, 0)}
@@ -55,7 +55,7 @@ const Cart = () => {
                 </p>
                 <button
                   onClick={openPopup}
-                  className="bg-purple-700 hover:bg-purple-50 rounded-lg text-white transition duration-300 ease-linear mt-5 border-2 border-purple-600 font-bold hover:text-purple-700 p-3"
+                  className="bg-green-700 hover:bg-purple-50 rounded-lg text-white transition duration-300 ease-linear mt-5 border-2 border-green-700 font-bold hover:text-green-700 p-3"
                 >
                   Thanh toán
                 </button>
@@ -78,13 +78,13 @@ const Cart = () => {
                         <div className="flex justify-between">
                           <button
                             onClick={closePopup}
-                            className="bg-purple-700 hover:bg-purple-50 rounded-lg text-white transition duration-300 ease-linear border-2 border-purple-600 font-bold hover:text-purple-700 px-4 py-2"
+                            className="bg-red-700 hover:bg-purple-50 rounded-lg text-white transition duration-300 ease-linear border-2 border-red-700 font-bold hover:text-red-700 px-4 py-2"
                           >
                             Đóng
                           </button>
                           <button
                             type="submit"
-                            className="bg-purple-700 hover:bg-purple-50 rounded-lg text-white transition duration-300 ease-linear border-2 border-purple-600 font-bold hover:text-purple-700 px-4 py-2"
+                            className="bg-green-700 hover:bg-purple-50 rounded-lg text-white transition duration-300 ease-linear border-2 border-green-700 font-bold hover:text-green-700 px-4 py-2"
                           >
                             Xác nhận
                           </button>
@@ -105,9 +105,9 @@ const Cart = () => {
       ) : (
         <>
           <div className="min-h-[80vh] flex flex-col items-center justify-center">
-            <h1 className="text-gray-700 font-semibold text-xl mb-2">Your cart is empty!</h1>
+            <h1 className="text-gray-700 font-semibold text-xl mb-2">Chưa có sản phẩm nào được thêm!</h1>
             <Link to={"/"}>
-              <button className="bg-purple-700 hover:bg-purple-50 rounded-lg text-white transition duration-300 ease-linear mt-5 border-2 border-purple-600 font-bold hover:text-purple-700 p-3">
+              <button className="bg-green-700 hover:bg-purple-50 rounded-lg text-white transition duration-300 ease-linear mt-5 border-2 border-green-700 font-bold hover:text-green-700 p-3">
                 Quay lại Bếp
               </button>
             </Link>

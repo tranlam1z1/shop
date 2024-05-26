@@ -29,11 +29,11 @@ const CartItem = ({ item }) => {
   };
 
   return (
-    <div className="flex items-center p-5 justify-between bg-violet-200 mt-2 mb-2 rounded-xl">
+    <div className="flex items-center p-5 justify-between bg-green-200 mt-2 mb-2 rounded-xl">
       <div className="flex p-3">
         <img src={item.image} className="h-28 rounded-lg" alt="" />
         <div className="ml-10 self-start space-y-5">
-          <h1 className="text-xl text-purple-700 font-semibold">{item.title}</h1>
+          <h1 className="text-xl text-green-700 font-semibold">{item.title}</h1>
           <p>Giá: {item.price} VNĐ</p>
           <p>Tổng tiền: {(item.price * item.quantity)} VNĐ</p>
           <div className="flex items-center">
@@ -49,9 +49,9 @@ const CartItem = ({ item }) => {
       </div>
       <div
         onClick={removeItemFromCart}
-        className="bg-purple-300 hover:bg-purple-400 transition-transform duration-300 cursor-pointer rounded-full p-3 mr-3"
+        className="bg-red-700 hover:bg-red-500 transition-transform duration-300 cursor-pointer rounded-full p-3 mr-3"
       >
-        <Delete className="text-gray-800" />
+        <Delete className="text-white" />
       </div>
     </div>
   );
