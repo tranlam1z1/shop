@@ -40,7 +40,7 @@ const Product = ({ item }) => {
         />
       </div>
       <div>
-        <h1 className="truncate w-40 mt-3 text-gray-700 font-semibold text-lg">
+        <h1 className="w-48 mt-3 text-gray-700 font-semibold text-lg">
           {item.title}
         </h1>
       </div>

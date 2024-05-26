@@ -27,7 +27,7 @@ const Navbar = () => {
 
         <div className="flex list-none items-center space-x-6 mr-5 text-gray-700 -tracking-tighterr font-semibold">
           <Link to={"/"}>
-            <li className="cursor-pointer hover:text-purple-500 transition duration-300 ease-in">
+            <li className="cursor-pointer hover:text-green-500 transition duration-300 ease-in">
               Trang chủ
             </li>
           </Link>

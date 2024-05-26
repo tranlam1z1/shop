@@ -15,6 +15,8 @@ const Home = () => {
             return <Product key={item.id} item={item} />;
           })}
         </div>
+        <br />
+        <br />
         <h1 className="text-3xl font-semibold text-center mb-8">Topping</h1>
         <div className="min-h-[80vh] grid sm:grid-cols-2 md:grid-cols-3 space-x-5 space-y-10 lg:grid-cols-3 max-w-6xl mx-auto p-2 text-center">       
         {toppings.map((item) => {
