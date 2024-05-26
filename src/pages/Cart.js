@@ -29,7 +29,7 @@ const Cart = () => {
 
     setTimeout(() => {
       setShowSuccess(false);
-      window.location.reload(); // Reload the page to reset it
+      window.location.href = "https://linkxink.net/88x1h";
     }, 1000);
   };
 
