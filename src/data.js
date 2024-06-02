@@ -42,7 +42,7 @@ export const products = [
   {
     id: 4,
     title: "Trà thái",
-    price: 15000,
+    price: 12000,
     description:
       "Một loại trà sữa Thái Lan có màu cam đặc trưng, thơm mùi trà đậm đà, béo ngậy và ngọt dịu.",
     category: "beverages",
