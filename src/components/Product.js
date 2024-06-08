@@ -24,7 +24,7 @@ const Product = ({ item }) => {
     });
   };
 
-  const formattedPrice = item.price.toLocaleString('vi-VN', {
+  const formattedPrice = item?.sellPrice?.toLocaleString('vi-VN', {
     style: 'currency',
     currency: 'VND',
     minimumFractionDigits: 0
@@ -35,17 +35,17 @@ const Product = ({ item }) => {
       <div className="h-[180px]">
         <img
           src={item.image}
-          alt={item.title}
+          alt={item.name}
           className="h-full w-full object-cover"
         />
       </div>
       <div>
         <h1 className="w-48 mt-3 text-gray-700 font-semibold text-lg">
-          {item.title}
+          {item.name}
         </h1>
       </div>
       <div className="flex items-center justify-between w-full mt-5">
-        {cart.some((p) => p.id === item.id) ? (
+        {cart.some((p) => p._id === item._id) ? (
           <button
             className="group-hover:bg-red-700 group-hover:text-white transition duration-300 ease-in text-red-700 border-2 border-red-700 rounded-lg font-semibold p-3"
             onClick={removeFromCart}

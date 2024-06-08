@@ -9,7 +9,7 @@ const CartItem = ({ item }) => {
   const { enqueueSnackbar } = useSnackbar();
 
   const removeItemFromCart = () => {
-    dispatch(remove(item.id));
+    dispatch(remove(item._id));
     enqueueSnackbar(`Item removed from your cart!`, {
       variant: "warning",
       autoHideDuration: 3000,
@@ -17,24 +17,24 @@ const CartItem = ({ item }) => {
   };
 
   const increaseItemQuantity = () => {
-    dispatch(increaseQuantity(item.id));
+    dispatch(increaseQuantity(item._id));
   };
 
   const decreaseItemQuantity = () => {
-    if (item.quantity > 1) {
-      dispatch(decreaseQuantity(item.id));
+    if (item.userQuantity > 1) {
+      dispatch(decreaseQuantity(item._id));
     } else {
       removeItemFromCart();
     }
   };
 
-  const formattedPrice = item.price.toLocaleString('vi-VN', {
+  const formattedPrice = item?.sellPrice?.toLocaleString('vi-VN', {
     style: 'currency',
     currency: 'VND',
     minimumFractionDigits: 0
   });
 
-  const formattedTotalPrice = (item.price * item.quantity).toLocaleString('vi-VN', {
+  const formattedTotalPrice = (item.sellPrice * item.userQuantity).toLocaleString('vi-VN', {
     style: 'currency',
     currency: 'VND',
     minimumFractionDigits: 0
@@ -43,16 +43,16 @@ const CartItem = ({ item }) => {
   return (
     <div className="flex items-center p-5 justify-between bg-green-200 mt-2 mb-2 rounded-xl">
       <div className="flex p-3">
-        <img src={item.image} className="h-28 rounded-lg" alt={item.title} />
+        <img src={item.image} className="h-28 rounded-lg" alt={item.name} />
         <div className="ml-10 self-start space-y-5">
-          <h1 className="text-xl text-green-700 font-semibold">{item.title}</h1>
+          <h1 className="text-xl text-green-700 font-semibold">{item.name}</h1>
           <p>Giá: {formattedPrice}</p>
           <p>Tổng tiền: {formattedTotalPrice}</p>
           <div className="flex items-center">
             <button onClick={decreaseItemQuantity} className="bg-gray-300 hover:bg-gray-400 rounded-full px-2 py-1">
               -
             </button>
-            <span className="mx-2">{item.quantity}</span>
+            <span className="mx-2">{item.userQuantity}</span>
             <button onClick={increaseItemQuantity} className="bg-gray-300 hover:bg-gray-400 rounded-full px-2 py-1">
               +
             </button>

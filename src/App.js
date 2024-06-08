@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cart from "./pages/Cart";
 import { SnackbarProvider } from "notistack";
 import { Slide } from "@mui/material";
+import { ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   return (
@@ -18,6 +20,7 @@ const App = () => {
           }}
         >
           <Navbar />
+          <ToastContainer />
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/cart" element={<Cart />} />
