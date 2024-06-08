@@ -17,7 +17,7 @@ const Product = ({ item }) => {
   };
 
   const removeFromCart = () => {
-    dispatch(remove(item.id));
+    dispatch(remove(item._id));
     enqueueSnackbar(`Xóa sản phẩm thành công!`, {
       variant: "warning",
       autoHideDuration: 3000,

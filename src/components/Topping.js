@@ -17,7 +17,7 @@ const Topping = ({ item }) => {
   };
 
   const removeToppingFromCart = () => {
-    dispatch(removeTopping(item.id));
+    dispatch(removeTopping(item._id));
     enqueueSnackbar(`Xóa sản phẩm thành công!`, {
       variant: "warning",
       autoHideDuration: 3000,
@@ -45,7 +45,7 @@ const Topping = ({ item }) => {
         </h1>
       </div>
       <div className="flex items-center justify-between w-full mt-5">
-        {cart.some((p) => p.id === item.id) ? (
+        {cart.some((p) => p.id === item._id) ? (
           <button
             className="group-hover:bg-red-700 group-hover:text-white transition duration-300 ease-in text-red-700 border-2 border-red-700 rounded-lg font-semibold p-3"
             onClick={removeToppingFromCart}

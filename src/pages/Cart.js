@@ -64,13 +64,7 @@ const Cart = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setShowSuccess(true);
-    setShowPopup(false);
-
-    setTimeout(() => {
-      setShowSuccess(false);
-      window.location.href = "https://linkxink.net/88x1h";
-    }, 1000);
+    openPopup();
   };
 
   const formattedTotalAmount = totalAmount?.toLocaleString('vi-VN', {
@@ -83,7 +77,8 @@ const Cart = () => {
     <>
       {cart.length > 0 ? (
         <>
-          <div className="min-h-[80vh] grid md:grid-cols-2 max-w-6xl gap-5 mx-auto">
+
+          <form onSubmit={handleSubmit} className="min-h-[80vh] grid md:grid-cols-2 max-w-6xl gap-5 mx-auto">
             <div className=" w-full">
               <div className="text-xl font-semibold py-16">Thông tin giao hàng</div>
               <div className="text-md font-semibold pb-4">Thông tin người nhận</div>
@@ -126,7 +121,7 @@ const Cart = () => {
                     <span className="text-gray-700 font-semibold">Thành tiền</span> : {formattedTotalAmount}
                   </p>
                   <button
-                    onClick={openPopup}
+                    type="submit"
                     className="bg-green-700 hover:bg-purple-50 rounded-lg text-white transition duration-300 ease-linear mt-5 border-2 border-green-700 font-bold hover:text-green-700 p-3"
                   >
                     Thanh toán
@@ -135,7 +130,7 @@ const Cart = () => {
               </div>
             </div>
 
-          </div>
+          </form>
 
           {showSuccess && (
             <div className="fixed top-4 right-4 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg text-xl font-semibold transition-opacity duration-300">

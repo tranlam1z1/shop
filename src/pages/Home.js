@@ -45,7 +45,7 @@ const Home = () => {
         <h1 className="text-3xl font-semibold text-center mb-8">Topping</h1>
         <div className="min-h-[80vh] grid sm:grid-cols-2 md:grid-cols-3 space-x-5 space-y-10 lg:grid-cols-3 max-w-6xl mx-auto p-2 text-center">       
         {toppings.map((item) => {
-            return <Product key={item.id} item={item} />;
+            return <Product key={item._id} item={item} />;
           })}
         </div>
         <div className="text-right mb-8 mr-4 fixed bottom-0 right-0">
